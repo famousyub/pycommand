@@ -1,0 +1,272 @@
+[16:45:05:572] ===================> DEBUT DE TEST <======================================================
+
+[16:45:05:652] ===================> EZR-AVS26981 <=======================================================
+
+[16:45:05:693] ######## CONFIGURATION BDT #######################
+[16:45:05:743] conf_DEC_BNFT_Version                     : NFT_V1.3.2
+               conf_DEC_BNFT_Nombre_Antenne_2G           : 2
+               conf_DEC_BNFT_Nombre_Antenne_5G           : 2
+               conf_DEC_BNFT_Nombre_Antenne_BT           : 1
+               conf_DEC_BNFT_Nom_Produit                 : VSB-ORANGE
+               conf_DEC_BNFT_PROMPT_DUT                  : TT>
+               conf_DEC_BNFT_CMD_LECTURE_SN              : [FLASH_Read CIE_SN CIE_INDICE CIE_CODE{Pass:PASSED}{CIE_CODE = %}{CIE_INDICE = %}{CIE_SN = %}]
+               conf_DEC_BNFT_CMD_LECTURE_VERSION         : [SagemTests_GetVersions{Pass:TT_I_M391_VSB_OS}]
+               conf_DEC_BNFT_CMD_INITIALISATION          : [FT_USB_CheckDevices{Pass:Host : 1 new device detected}{Fail:no device}]
+               conf_DEC_BNFT_CMD_FINALISATION            : [hciconfig hci0 up{Pass:TT>}][hcitool cmd 0x03 0x003 > /tmp/log.log 2>&1 >/dev/null &{Pass:null &}]
+               conf_DEC_BNFT_CMD_Config_Wifi_5G          : [hcitool cmd 0x03 0x003{Pass:TT>}][bcm_start_tx_one_antenna_5g.sh -a 0 -c 44 -pwr 15{Pass:PASSED}]
+               conf_DEC_BNFT_Config_BT                   : [hcitool cmd 0x03 0x003 > /tmp/log.log 2>&1 >/dev/null &{Pass:null &}][bcm_stop_tx_one_antenna_5g.sh{Pass:TT>}]
+               conf_DEC_BNFT_CMD_ACTIVE_ANNT_2G          : [bcm_start_tx_one_antenna_2g.sh -a %s -c %d -pwr 15{Pass:PASSED}]
+               conf_DEC_BNFT_CMD_ACTIVE_ANNT_5G          : [bcm_start_tx_one_antenna_5g.sh -a %s -c %d -pwr 15{Pass:PASSED}]
+               conf_DEC_BNFT_CMD_ACTIVE_ANNT_BT          : [hcitool cmd 0x3F 0x051 0xee 0xff 0xc0 0x88 0x00 0x00 0x01 0x13 0x04 0x01 0x0F 0x53 0x01 0x09 0x00 0x00{Pass:TT>}{Fail:failed}]
+               conf_DEC_BNFT_CMD_TEST_IR                 : [FT_IR ENABLE{Pass:PASSED}]|[FT_IR ENABLE{Pass:RC# 000b}]|[FT_IR DISABLE{Pass:PASSED}]
+               conf_DEC_BNFT_CMD_TEST_BOUTTON1           : []|[FT_DetectSwitches DISABLE{Pass:PASSED}][FT_DetectSwitches ENABLE{TimeOut:5}{Pass:148 released}]|[FT_DetectSwitches DISABLE{Pass:PASSED}]
+               conf_DEC_BNFT_sSequenceCouleursTestLeds   : R
+               conf_DEC_BNFT_sCdeTTDebutFinTestLeds      : [FT_LED DISABLE ALL{Pass:PASSED}]\n
+               conf_DEC_BNFT_sCdeTTActivationLed1        : [FT_LED ENABLE ALL{Pass:PASSED}]
+               conf_DEC_BNFT_CMD_REPETABILITE            : [reboot{Pass:reboot}]
+               conf_DEC_BNFT_Delay_2G                    : 1
+               conf_DEC_BNFT_Delay_BT                    : 3
+               conf_DEC_BNFT_Nombre_Bouton               : 1
+               conf_DEC_BNFT_Nombre_LEDS                 : 1
+               conf_DEC_BNFT_Numero_Antennes_2G          : 0|1
+               conf_DEC_BNFT_Numero_Antennes_5G          : 0|1
+               conf_DEC_BNFT_Nombre_Retry_Bouton         : 5
+               conf_DEC_BNFT_FLAG_LECTURE_VERSION        : 1
+               conf_DEC_BNFT_FLAG_LECTURE_SN             : 1
+               conf_DEC_BNFT_FLAG_2G                     : 1
+               conf_DEC_BNFT_FLAG_5G                     : 1
+               conf_DEC_BNFT_FLAG_BT                     : 1
+               conf_DEC_BNFT_FLAG_INITIALISATION         : 1
+               conf_DEC_BNFT_FLAG_IR                     : 1
+               conf_DEC_GEN_iVitessePortComStb           : 115200
+               
+[16:45:05:803] poste_DEC_BNFT_Offset_Antennes_2G_S0_VSB-ORANGE39
+               poste_DEC_BNFT_Offset_Antennes_5G_S0_VSB-ORANGE40
+               poste_DEC_BNFT_Offset_Antennes_BT_S0_VSB-ORANGE
+[16:45:05:843] Pathloss 2GHz : 37|39|
+[16:45:05:883] Pathloss 5GHz : 41|40|
+[16:45:05:923] Pathloss BT : 40|
+[16:46:11:142] Demarrage Carte OK
+[16:46:11:192] ===================> Lecture Version TT <=================================================
+
+[16:46:11:232] ====> Lecture Version TT
+[16:46:11:272] [PC > GTW]  SagemTests_GetVersions
+[16:46:11:832] [PC < GTW]  SagemTests_GetVersions
+                           [SAGEMTESTS] SagemTests compiled : Jun 22 2023 at 17:01:23 
+                           [SAGEMTESTS] DEFCONFIG = sc_bcm_m391_72178B0_ZH_22_VSB_Orange_functional_defconfig
+                           [SAGEMTESTS] BUILDROOT_VERSION = a6bf9dfb4833979d78463afc364ea82d07d9c401
+                           [SAGEMTESTS] BRANCH = HEAD
+                           [SAGEMTESTS] BCHP_CHIP = 7216
+                           [SAGEMTESTS] PRODUCT = M391_VSB_OS
+                           [SAGEMTESTS] PROFILE = USINE
+                           [SAGEMTESTS] PIC Version: Not Applicable
+                           [SAGEMTESTS] RF4CE Firmware Version: Not Applicable
+                           [SAGEMTESTS] SagemTest Version : TT_I_M391_VSB_OS
+[16:46:11:902] 
+[16:46:11:942] Lecture Version TT OK
+[16:46:11:982] ===================> Lecture SN <=========================================================
+
+[16:46:12:032] ====> Lecture SN
+[16:46:12:072] [PC > GTW]  FLASH_Read CIE_SN CIE_INDICE CIE_CODE
+[16:46:12:623] [PC < GTW]  FLASH_Read CIE_SN CIE_INDICE CIE_CODE
+                           [SAGEMTESTS] CIE_SN = 12863355000530
+                           CIE_INDICE = Z1
+                           CIE_CODE = 25402295-5
+                           [SAGEMTESTS] => FLASH_Read - PASSED
+[16:46:12:653] 
+[16:46:12:693] Lecture SN OK
+[16:46:12:733] ===================> Initialisation <=====================================================
+
+[16:46:12:773] ====> Initialisation
+[16:46:12:803] [PC > GTW]  FT_USB_CheckDevices
+[16:46:13:356] [PC < GTW]  FT_USB_CheckDevices
+                           [SAGEMTESTS] Number of USB Host we want to detect : 2 
+                           [SAGEMTESTS] USB Check on Host : 1 new device detected
+[16:46:13:406] 
+[16:46:13:436] Initialisation OK
+[16:46:13:467] ===================> TEST IR <============================================================
+
+[16:46:13:506] =====> TEST IR
+[16:46:13:537] [PC > GTW]  FT_IR ENABLE
+[16:46:14:081] [PC < GTW]  FT_IR ENABLE
+                           [SAGEMTESTS] => FT_IR - PASSED
+[16:46:14:563] [PC > GTW]  FT_IR ENABLE
+[16:46:22:117] [PC < GTW]  FT_IR ENABLE
+                           [SAGEMTESTS] => FT_IR - PASSED <= 
+                           TT> 
+[16:46:22:147] ======>
+[16:46:24:194] [PC > GTW]  FT_IR ENABLE
+[16:46:24:749] [PC < GTW]  FT_IR ENABLE
+                           [SAGEMTESTS] => FT_IR - PASSED
+[16:46:25:100] [PC > GTW]  FT_IR ENABLE
+[16:46:25:645] [PC < GTW]  FT_IR ENABLE
+                           [SAGEMTESTS] RC# 000b
+[16:46:25:715] [PC > GTW]  FT_IR DISABLE
+[16:46:26:258] [PC < GTW]  FT_IR DISABLE
+                           [SAGEMTESTS] => FT_IR - PASSED
+[16:46:26:288] 
+[16:46:26:328] Test IR OK
+[16:46:26:359] ===================> Récuparation Mesures Wifi 2.4 Ghz <==================================
+
+[16:46:26:389] =====> Récuparation Mesures Wifi 2.4 Ghz
+[16:46:26:429] [PC > GTW]  bcm_start_tx_one_antenna_2g.sh -a 0 -c 7 -pwr 15
+[16:46:27:033] [PC < GTW]  bcm_start_tx_one_antenna_2g.sh -a 0 -c 7 -pwr 15
+                           => bcm_start_tx_one_antenna_2g - PASSED
+[16:46:28:089] ============> Debut Analyse powermetter
+[16:46:28:149] ====================== Détail Mesures ==================================
+[16:46:28:180] ------------> Mesure 2G Antenne 0 = 14.325523
+[16:46:28:220] ------------> Mesure 2G Sans offset = -22.674477
+[16:46:28:270] ------------> Offset appliqué = 37
+[16:46:28:311] ========================================================================
+
+[16:46:28:361] [PC > GTW]  bcm_start_tx_one_antenna_2g.sh -a 1 -c 7 -pwr 15
+[16:46:28:977] [PC < GTW]  bcm_start_tx_one_antenna_2g.sh -a 1 -c 7 -pwr 15
+                           => bcm_start_tx_one_antenna_2g - PASSED
+[16:46:30:013] ============> Debut Analyse powermetter
+[16:46:30:104] ====================== Détail Mesures ==================================
+[16:46:30:134] ------------> Mesure 2G Antenne 1 = 13.014350
+[16:46:30:184] ------------> Mesure 2G Sans offset = -25.985650
+[16:46:30:224] ------------> Offset appliqué = 39
+[16:46:30:284] ========================================================================
+
+[16:46:30:354] 
+[16:46:30:414] Récupération Mesures Wifi 2.4 Ghz OK
+[16:46:30:474] ===================> Configuration Wifi  5 Ghz <==========================================
+
+[16:46:30:524] =====> Configuration Wifi  5 Ghz
+[16:46:30:564] [PC > GTW]  hcitool cmd 0x03 0x003
+[16:46:31:127] [PC < GTW]  hcitool cmd 0x03 0x003
+                           < HCI Command: ogf 0x03, ocf 0x0003, plen 0
+                           > HCI Event: 0x0e plen 4
+                             01 03 0C 00 
+                           TT>
+[16:46:31:167] [PC > GTW]  bcm_start_tx_one_antenna_5g.sh -a 0 -c 44 -pwr 15
+[16:46:31:844] [PC < GTW]  bcm_start_tx_one_antenna_5g.sh -a 0 -c 44 -pwr 15
+                           => bcm_start_tx_one_antenna_5g - PASSED
+[16:46:31:904] 
+[16:46:31:935] Configuration Wifi  5 Ghz OK
+[16:46:31:985] ===================> Récuparation Mesures Wifi 5 Ghz <====================================
+
+[16:46:32:025] =====> Récuparation Mesures Wifi 5 Ghz
+[16:46:32:065] [PC > GTW]  bcm_start_tx_one_antenna_5g.sh -a 0 -c 44 -pwr 15
+[16:46:32:709] [PC < GTW]  bcm_start_tx_one_antenna_5g.sh -a 0 -c 44 -pwr 15
+                           => bcm_start_tx_one_antenna_5g - PASSED
+[16:46:32:749] ============> Debut Analyse powermetter
+[16:46:32:800] ====================== Détail Mesures ==================================
+[16:46:32:850] ------------> Mesure 5G Antenne 0 = 14.951968
+[16:46:32:890] ------------> Mesure 5G Sans offset = -26.048032
+[16:46:32:940] ------------> Offset appliqué = 41
+[16:46:33:001] ========================================================================
+
+[16:46:33:031] [PC > GTW]  bcm_start_tx_one_antenna_5g.sh -a 1 -c 44 -pwr 15
+[16:46:33:705] [PC < GTW]  bcm_start_tx_one_antenna_5g.sh -a 1 -c 44 -pwr 15
+                           => bcm_start_tx_one_antenna_5g - PASSED
+[16:46:33:755] ============> Debut Analyse powermetter
+[16:46:33:815] ====================== Détail Mesures ==================================
+[16:46:33:856] ------------> Mesure 5G Antenne 1 = 15.469281
+[16:46:33:906] ------------> Mesure 5G Sans offset = -24.530719
+[16:46:33:946] ------------> Offset appliqué = 40
+[16:46:33:996] ========================================================================
+
+[16:46:34:037] 
+[16:46:34:077] Récupération Mesures Wifi 5 Ghz OK
+[16:46:34:117] ===================> Configuration BT <===================================================
+
+[16:46:34:158] =====> Configuration Wifi BT
+[16:46:34:207] [PC > GTW]  hcitool cmd 0x03 0x003 > /tmp/log.log 2>&1 >/dev/null &
+[16:46:34:762] [PC < GTW]  hcitool cmd 0x03 0x003 > /tmp/log.log 2>&1 >/dev/null &
+[16:46:34:824] [PC > GTW]  bcm_stop_tx_one_antenna_5g.sh
+[16:46:35:377] [PC < GTW]  bcm_stop_tx_one_antenna_5g.sh
+                           => bcm_stop_tx_one_antenna_5g - PASSED <=
+                           [1]+  Done                       hcitool cmd 0x03 0x003 1>/tmp/log.log 2>&1 1>/dev/null
+                           TT>
+[16:46:35:418] 
+[16:46:35:458] Configuration BT OK
+[16:46:35:507] ===================> Récuparation Mesures BT <============================================
+
+[16:46:35:548] =====> Récuparation Mesures BT
+[16:46:35:588] [PC > GTW]  hcitool cmd 0x3F 0x051 0xee 0xff 0xc0 0x88 0x00 0x00 0x01 0x13 0x04 0x01 0x0F 0x53 0x01 0x09 0x00 0x00
+[16:46:36:151] [PC < GTW]  hcitool cmd 0x3F 0x051 0xee 0xff 0xc0 0x88 0x00 0x00 0x01 0x13 0x04 0x01 0x0
+                           F 0x53 0x01 0x09 0x00 0x00
+                           < HCI Command: ogf 0x3f, ocf 0x0051, plen 16
+                             EE FF C0 88 00 00 01 13 04 01 0F 53 01 09 00 00 
+                           > HCI Event: 0x0e plen 4
+                             01 51 FC 00 
+                           TT>
+[16:46:39:223] ============> Debut Analyse powermetter
+[16:46:39:294] ====================== Détail Mesures ==================================
+[16:46:39:324] ------------> Mesure BT Antenne 0 = 1.007919
+[16:46:39:355] ------------> Mesure BT Sans offset = -38.992081
+[16:46:39:395] ------------> Offset appliqué = 40
+[16:46:39:425] ========================================================================
+
+[16:46:41:491] ====================== Détail Mesures ==================================
+[16:46:41:551] ------------> Mesure BT Antenne 0 = 4.037816
+[16:46:41:592] ------------> Mesure BT Sans offset = -35.962184
+[16:46:41:622] ------------> Offset appliqué = 40
+[16:46:41:672] ========================================================================
+
+[16:46:41:712] 
+[16:46:41:762] Récupération Mesures BT OK
+[16:46:41:802] ===================> TRACA BDD <==========================================================
+
+[16:46:41:852] Traca en cours
+[16:46:41:883] ==============> Assemblage des données GTW en Traçabilité
+
+[16:46:41:923] ==============> Enregistrement des Mesures en Traçabilité
+
+[16:46:41:963] --------> Appel Traça  : Log Parametric Data Tableau: Début <--------
+[16:46:42:374] --------> Appel Traça  : Log Parametric Data Tableau: Fin   <--------
+[16:46:42:404] Erreur Traca
+[16:46:42:434] 
+[16:46:42:474] Erreur traçabilité
+[16:46:42:504] ===================> TEST KO <============================================================
+
+[16:46:42:564] !!! Passage Ko !!!
+[16:46:42:605] ===================> Attente retrait Decodeur <===========================================
+
+[16:46:42:645] ====> Attente retrait Decodeur
+[16:46:42:695] ===================> FIN DE TEST <========================================================
+
+[16:46:42:736] ############ PASSAGE KO ###########
+[16:46:42:766] DUREE DU TEST : 30 secondes
+
+[16:46:42:806] SOFT VERSION : EZR-AVS26981 NFT_V1.3.2_0
+
+[16:46:42:836] <CIE>  Nom                                : CIE M391 VSB OS-2 Prod
+               <CIE>  Référence                          : 254022955
+               <CIE>  Indice                             : Z01
+               <SFIN> Nom                                : CIE M391 VSB OS-2 Prod
+               <SFIN> Référence                          : 254022955
+               <SFIN> Indice                             : Z01
+               
+[16:46:42:866] Sn SFIN                                   : 
+               Sn CIE                                    : 12863355000530
+               Libelle erreur                            : Erreur tracabilité
+               Code erreur                               : Erreur tracabilité
+               
+[16:46:42:906] 
+[16:46:42:936] Mesure <MES_BNFT_PWR0_2G>                 : Mesures puissance antenne 0 2G - Status 0
+                                                           10.000000 dBm < ... < 20.000000 dBm
+                                                           14.325523 dBm
+               Mesure <MES_BNFT_PWR1_2G>                 : Mesures puissance antenne 1 2G - Status 0
+                                                           10.000000 dBm < ... < 20.000000 dBm
+                                                           13.014350 dBm
+               Mesure <MES_BNFT_PWR2_2G>                 : Mesures puissance antenne 2 2G - Status 2
+                                                           10.000000 dBm < ... < 20.000000 dBm
+               Mesure <MES_BNFT_PWR3_2G>                 : Mesures puissance antenne 3 2G - Status 2
+                                                           10.000000 dBm < ... < 20.000000 dBm
+               Mesure <MES_BNFT_PWR0_5G>                 : Mesures puissance antenne 0 5G - Status 0
+                                                           10.000000 dBm < ... < 20.000000 dBm
+                                                           14.951968 dBm
+               Mesure <MES_BNFT_PWR1_5G>                 : Mesures puissance antenne 1 5G - Status 0
+                                                           10.000000 dBm < ... < 20.000000 dBm
+                                                           15.469281 dBm
+               Mesure <MES_BNFT_PWR0_BT>                 : Mesures puissance antenne 0 BT - Status 0
+                                                           2.000000 dBm < ... < 10.000000 dBm
+                                                           4.037816 dBm
+               Mesure <MES_BNFT_Temps_Test>              : Temps de test NFT - Status 0
+                                                           0.000000 s < ... < 100.000000 s
+                                                           30.000000 s
+               
+[16:46:42:967] 
